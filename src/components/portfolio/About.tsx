@@ -3,9 +3,9 @@ import { Award, Briefcase, Coffee, Users } from "lucide-react";
 import aboutImg from "@/assets/main-about.jpeg";
 
 const stats = [
-  { icon: Briefcase, value: "5+", label: "Years Experience" },
-  { icon: Award, value: "60+", label: "Projects Delivered" },
-  { icon: Users, value: "40+", label: "Happy Clients" },
+  { icon: Briefcase, value: "1+", label: "With Experience" },
+  { icon: Award, value: "20+", label: "Learning More and More" },
+  { icon: Users, value: "40+", label: "Satisfied with the projects i made" },
   { icon: Coffee, value: "∞", label: "Cups of Coffee" },
 ];
 

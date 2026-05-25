@@ -10,7 +10,7 @@ const categories = [
   {
     title: "Frontend",
     skills: [
-      { name: "React / Next.js"},
+      { name: "React / Next.js", level: 95 },
       { name: "TypeScript ES6", level: 90 },
       { name: "TypeScript", level: 90 },
       { name: "Tailwind CSS", level: 95 },

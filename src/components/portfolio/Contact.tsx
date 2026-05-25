@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { motion } from "motion/react";
 import { Mail, Github, Linkedin, MessageCircle, Send, MapPin, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,32 +7,26 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 export function Contact() {
-  const [sent, setSent] = useState(false);
-  const [loading, setLoading] = useState(false);
+
+  const [state, handleSubmit] = useForm("meedlnlv");
+
+
   const socialLinks = [
-  {
-    icon: Github,
-    href: "https://github.com/JannatRahman",
-  },
-  {
-    icon: Linkedin,
-    href: "https://www.linkedin.com/in/jannat-amila-rahman/",
-  },
-  {
-    icon: MessageCircle,
-    href: "https://wa.me/8801XXXXXXXXX",
-  },
+    {
+      icon: Github,
+      href: "https://github.com/JannatRahman",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/jannat-amila-rahman/",
+    },
+    {
+      icon: MessageCircle,
+      href: "https://wa.me/8801XXXXXXXXX",
+    },
   ];
 
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
-    (e.target as HTMLFormElement).reset();
-  };
+
 
   return (
     <section id="contact" className="py-24 md:py-32 relative">
@@ -78,26 +73,26 @@ export function Contact() {
               <div className="text-xs text-muted-foreground uppercase tracking-wider mb-3">Socials</div>
               <div className="flex gap-3">
                 {socialLinks.map((item, i) => {
-  const Icon = item.icon;
+                  const Icon = item.icon;
 
-  return (
-    <a
-      key={i}
-      href={item.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-10 h-10 rounded-lg glass grid place-items-center hover:bg-primary/20 hover:border-primary/40 transition-all hover:-translate-y-1"
-    >
-      <Icon className="w-4 h-4" />
-    </a>
-  );
-})}
+                  return (
+                    <a
+                      key={i}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-lg glass grid place-items-center hover:bg-primary/20 hover:border-primary/40 transition-all hover:-translate-y-1"
+                    >
+                      <Icon className="w-4 h-4" />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </motion.div>
 
           <motion.form
-            onSubmit={onSubmit}
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -106,38 +101,61 @@ export function Contact() {
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-sm text-muted-foreground mb-2 block">Full Name</label>
-                <Input required 
-                placeholder="Jane Doe" 
-                className="bg-background/40 border-border focus:border-primary" />
+                <Input
+                  name="name"
+                  required
+                  placeholder="Jane Doe"
+                  className="bg-background/40 border-border focus:border-primary"
+                />
               </div>
               <div>
                 <label className="text-sm text-muted-foreground mb-2 block">Email</label>
-                <Input required 
-                type="email" 
-                placeholder="jane@example.com" 
-                className="bg-background/40 border-border focus:border-primary" />
+                <Input
+                  name="email"
+                  required
+                  type="email"
+                  placeholder="jane@example.com"
+                  className="bg-background/40 border-border focus:border-primary"
+                />
               </div>
             </div>
             <div>
               <label className="text-sm text-muted-foreground mb-2 block">Subject</label>
-              <Input required placeholder="Project inquiry" className="bg-background/40 border-border focus:border-primary" />
+              <Input
+                name="subject"
+                required
+                placeholder="Project inquiry"
+                className="bg-background/40 border-border focus:border-primary"
+              />
             </div>
             <div>
               <label className="text-sm text-muted-foreground mb-2 block">Message</label>
-              <Textarea required rows={5} placeholder="Tell me about your project..." className="bg-background/40 border-border focus:border-primary resize-none" />
+              <Textarea
+                name="message"
+                required
+                rows={5}
+                placeholder="Tell me about your project..."
+                className="bg-background/40 border-border focus:border-primary resize-none"
+              />
             </div>
             <Button
               type="submit"
-              disabled={loading || sent}
+              disabled={state.submitting}
               size="lg"
               className="w-full bg-gradient-primary hover:opacity-90 glow"
             >
-              {sent ? (
-                <><CheckCircle2 className="mr-2 w-4 h-4" /> Message Sent!</>
-              ) : loading ? (
+              {state.succeeded ? (
+                <>
+                  <CheckCircle2 className="mr-2 w-4 h-4" />
+                  Message Sent!
+                </>
+              ) : state.submitting ? (
                 <>Sending...</>
               ) : (
-                <><Send className="mr-2 w-4 h-4" /> Send Message</>
+                <>
+                  <Send className="mr-2 w-4 h-4" />
+                  Send Message
+                </>
               )}
             </Button>
           </motion.form>

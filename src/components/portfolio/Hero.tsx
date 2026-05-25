@@ -23,7 +23,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm text-muted-foreground mb-6"
           >
             <Sparkles className="w-4 h-4 text-primary" />
-            Available for freelance work
+            Available for work
           </motion.div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6">
@@ -35,7 +35,7 @@ export function Hero() {
           </h1>
 
           <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
-            I craft modern, interactive, and performant web experiences using React, Next.js, and
+            I craft modern, interactive, and performant web experiences using React, Next.js, Express, and
             cutting-edge tools — turning ideas into pixel-perfect products.
           </p>
 

@@ -8,15 +8,18 @@ import { Projects } from "@/components/portfolio/Projects";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 
+
 export const Route = createFileRoute("/")({
+  
   component: Index,
+  
   head: () => ({
     meta: [
       { title: "Amila Rahman —  Web Developer Portfolio" },
       {
         name: "description",
         content:
-          "Portfolio of Jannat AMila Rahman,  web developer building modern, interactive web experiences with React, Next.js, and JavaScript ES6, ExpressJs.",
+          "Portfolio of Jannat Amila Rahman,  web developer building modern, interactive web experiences with React, Next.js, and JavaScript ES6, ExpressJs.",
       },
       { property: "og:title", content: "Amila Rahman — Web Developer" },
       { property: "og:description", content: "Modern, animated portfolio of a full web developer." },
@@ -33,6 +36,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
