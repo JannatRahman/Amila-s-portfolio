@@ -37,7 +37,7 @@ export function About() {
             <div className="relative rounded-3xl overflow-hidden glass">
               <img
                 src={aboutImg}
-                alt="About Alex Carter"
+                alt="About Amila Rahman"
                 width={600}
                 height={700}
                 loading="lazy"
@@ -56,8 +56,8 @@ export function About() {
               A passionate developer who loves clean code & beautiful design
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              I'm a Full Stack Developer with 5+ years of experience building scalable web
-              applications. I specialize in React, Next.js, TypeScript, and Node.js — turning
+              I'm a Web Developer with experience in building scalable web
+              applications. I specialize in React, Next.js, Javascript ES6, and Node.js, ExpressJS — turning
               complex problems into simple, elegant solutions.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">

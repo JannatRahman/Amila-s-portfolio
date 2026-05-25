@@ -9,13 +9,38 @@ import p5 from "@/assets/project-5.jpg";
 import p6 from "@/assets/project-6.jpg";
 
 const projects = [
-  { img: p1, title: "KinKeeper", desc: "A modern contact and interaction management application.", tags: ["JavaScript","Nextjs",'Reactjs',"Tailwind CSS"], category: "Frontend" },
-  { img: p2, title: "Skillsphere", desc: "Modern online learning platform  to help users explore trending courses, discover top instructors.", tags: ["JavaScript","Nextjs", "Reactjs"], category: "Frontend" },
-  { img: p3, title: "DigiTools", desc: "A modern and interactive e-commerce cart application  for shopping.", tags: ["JavaScript","ReactJs","Tailwind CSS", "HTML"], category: "Frontend" },
-  { img: p4, title: "BookVibe", desc: "Place where you can browse books, and find your favourite to explore.", tags: ["JavaScript","ReactJs","Tailwind CSS", "HTML"], category: "Frontend" },
+  {
+    img: p1,
+    title: "KinKeeper",
+    desc: "A modern contact and interaction management application.",
+    tags: ["JavaScript", "Nextjs", 'Reactjs', "Tailwind CSS"], category: "Frontend",
+    live: 'https://kin-keeper-rosy.vercel.app/',
+    github: 'https://github.com/JannatRahman/KinKeeper'
+  },
+  { img: p2, title: "Skillsphere", desc: "Modern online learning platform  to help users explore trending courses, discover top instructors.", tags: ["JavaScript", "Nextjs", "Reactjs"], category: "Frontend" ,
+     live: 'https://skill-sphere-kappa.vercel.app/register',
+    github: 'https://github.com/JannatRahman/SkillSphere'
+  },
 
-  { img: p5, title: "Playstore", desc: "Paystore is to install your favourite apps and browse for them.", tags: ["JavaScript","ReactJs","Tailwind CSS", "HTML"], category: "Frontend" },
-  { img: p6, title: "Job Application Tracker", desc: "Keeps tracks of applications to keep up to date.", tags: ["JavaScript","ReactJs","Tailwind CSS", "HTML"], category: "Frontend" },
+  { img: p3, title: "DigiTools", desc: "A modern and interactive e-commerce cart application  for shopping.", tags: ["JavaScript", "ReactJs", "Tailwind CSS", "HTML"], category: "Frontend" ,
+    live: 'https://digitools-platform-nine.vercel.app/',
+    github: 'https://github.com/JannatRahman/digitools-platform'
+  },
+
+  { img: p4, title: "BookVibe", desc: "Place where you can browse books, and find your favourite to explore.", tags: ["JavaScript", "ReactJs", "Tailwind CSS", "HTML"], category: "Frontend" ,
+     live: 'https://book-vibe-jv2ah3vde-jannatrahman1290-2981s-projects.vercel.app/',
+    github: 'https://github.com/JannatRahman/Book-Vibe'
+  },
+
+  { img: p5, title: "Playstore", desc: "Paystore is to install your favourite apps and browse for them.", tags: ["JavaScript", "ReactJs", "Tailwind CSS", "HTML"], category: "Frontend" ,
+    live: 'https://play-store-fzx12v45g-jannatrahman1290-2981s-projects.vercel.app/',
+    github: 'https://github.com/JannatRahman/Play-Store'
+  },
+
+  { img: p6, title: "Job Application Tracker", desc: "Keeps tracks of applications to keep up to date.", tags: ["JavaScript", "ReactJs", "Tailwind CSS", "HTML"], category: "Frontend",
+    live: 'https://jannatrahman.github.io/GitHub-ISSUE-TRACKER/',
+    github: 'https://github.com/JannatRahman/GitHub-ISSUE-TRACKER'
+   },
 ];
 
 const filters = ["All", "Frontend", "Fullstack"];
@@ -44,11 +69,10 @@ export function Projects() {
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                filter === f
-                  ? "bg-gradient-primary text-primary-foreground glow"
-                  : "glass hover:border-primary/40"
-              }`}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${filter === f
+                ? "bg-gradient-primary text-primary-foreground glow"
+                : "glass hover:border-primary/40"
+                }`}
             >
               {f}
             </button>
@@ -77,12 +101,20 @@ export function Projects() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center gap-3 pb-6">
-                    <a href="#" className="w-10 h-10 rounded-full bg-gradient-primary grid place-items-center glow">
+                    <a
+                      href={p.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full bg-gradient-primary grid place-items-center glow"
+                    >
                       <ExternalLink className="w-4 h-4" />
                     </a>
-                    <a href="#" className="w-10 h-10 rounded-full glass grid place-items-center">
-                      <Github className="w-4 h-4" />
-                    </a>
+
+                    {p.github && (
+                      <a href={p.github} target="_blank" rel="noopener noreferrer">
+                        <Github />
+                      </a>
+                    )}
                   </div>
                 </div>
                 <div className="p-6">

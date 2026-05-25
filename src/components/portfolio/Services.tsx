@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Code, Layout, Smartphone, Rocket, Bug, Plug, Gauge, Sparkles, ArrowUpRight } from "lucide-react";
 
 const services = [
-  { icon: Code, title: "Full Stack Development", desc: "End-to-end web apps with modern stacks — from database to UI." },
+  { icon: Code, title: "Web Development", desc: "End-to-end web apps with modern stacks — from database to UI." },
   { icon: Layout, title: "Frontend Development", desc: "Pixel-perfect, accessible React & Next.js interfaces." },
   { icon: Smartphone, title: "Responsive Design", desc: "Sites that feel native on every screen size and device." },
   { icon: Rocket, title: "Landing Pages", desc: "High-converting landing pages built for speed and clarity." },

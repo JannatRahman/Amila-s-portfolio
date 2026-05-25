@@ -31,7 +31,7 @@ export function Hero() {
               Hi, I'm
             </span>
             <span className="text-gradient">Jannat Amila Rahman</span>
-            <span className="block mt-2 text-gradient-primary">Full Stack Developer</span>
+            <span className="block mt-2 text-gradient-primary">Web Developer</span>
           </h1>
 
           <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
@@ -41,7 +41,7 @@ export function Hero() {
 
           <div className="flex flex-wrap gap-4 mb-10">
             <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 glow group">
-              <a href="#projects">
+              <a href="https://www.linkedin.com/in/jannat-amila-rahman/?locale=featured">
                 View Projects
                 <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -84,7 +84,7 @@ export function Hero() {
             <div className="absolute -inset-2 bg-gradient-primary rounded-3xl opacity-60 blur-xl" />
             <img
               src={heroAvatar}
-              alt="Alex Carter — Full Stack Developer"
+              alt="Amila Rahman — Web Developer"
               width={500}
               height={500}
               className="relative w-[320px] h-[320px] md:w-[450px] md:h-[450px] object-cover rounded-3xl border border-border glass"
@@ -93,9 +93,10 @@ export function Hero() {
 
           {[
             { label: "React", top: "10%", left: "-10%", delay: 0 },
-            { label: "TypeScript", top: "70%", left: "-15%", delay: 1 },
+            { label: "Javascript ES6", top: "70%", left: "-15%", delay: 1 },
             { label: "Next.js", top: "20%", right: "-10%", delay: 0.5 },
             { label: "Node.js", top: "80%", right: "-5%", delay: 1.5 },
+            { label: "ExpressJS", top: "80%", right: "-5%", delay: 1.5 },
           ].map((tag, i) => (
             <motion.div
               key={i}

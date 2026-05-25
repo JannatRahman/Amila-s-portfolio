@@ -14,7 +14,7 @@ export function Footer() {
               <span className="font-display font-bold text-lg">Amila.Dev </span>
             </a>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Full Stack Web Developer crafting modern, performant, and beautiful digital experiences.
+              Web Developer crafting modern, performant, and beautiful digital experiences.
             </p>
           </div>
 
