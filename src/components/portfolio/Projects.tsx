@@ -32,7 +32,7 @@ const projects = [
     github: 'https://github.com/JannatRahman/Book-Vibe'
   },
 
-  { img: p5, title: "Playstore", desc: "Paystore is to install your favourite apps and browse for them.", tags: ["JavaScript", "ReactJs", "Tailwind CSS", "HTML"], category: "Frontend" ,
+  { img: p5, title: "Playstore", desc: "Playstore is to install your favourite apps and browse for them.", tags: ["JavaScript", "ReactJs", "Tailwind CSS", "HTML"], category: "Frontend" ,
     live: 'https://play-store-fzx12v45g-jannatrahman1290-2981s-projects.vercel.app/',
     github: 'https://github.com/JannatRahman/Play-Store'
   },
